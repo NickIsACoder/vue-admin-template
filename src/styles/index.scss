@@ -1,0 +1,331 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+@import './btn.scss';
+
+$theme-color: #4b6bd0;
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.block {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inlineBlock {
+  display: block;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+aside {
+  background: #eef1f6;
+  padding: 8px 24px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  display: block;
+  line-height: 32px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #2c3e50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    color: #337ab7;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(32, 160, 255);
+    }
+  }
+}
+
+//main-container全局样式
+.app-container {
+  padding: 20px;
+}
+
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+
+.pagination-container {
+  margin-top: 30px;
+}
+
+.text-center {
+  text-align: center
+}
+
+.sub-navbar {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  padding-right: 20px;
+  transition: 600ms ease position;
+  background: rgba(255, 255, 255, 1);
+  //background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+  -webkit-box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+
+  .head-title {
+    display: inline-block;
+    color: $theme-color;
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 23px;
+      right: -80px;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(to right, $theme-color, #fff);
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 23px;
+      left: -80px;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(to left, $theme-color, #fff);
+    }
+  }
+
+  .head-btn-list {
+    position: absolute;
+    top: 0;
+    right: 30px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &.draft {
+    background: #d0d0d0;
+  }
+
+  &.deleted {
+    background: #d0d0d0;
+  }
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(32, 160, 255);
+  }
+}
+
+.filter-container {
+  padding-bottom: 10px;
+
+  .filter-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+}
+
+//refine vue-multiselect plugin
+.multiselect {
+  line-height: 16px;
+}
+
+.multiselect--active {
+  z-index: 1000 !important;
+}
+
+//2020-02-18 add  common css
+.width96 {
+  width: 96%;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.image-slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #f5f7fa;
+  color: #909399;
+  font-size: 28px;
+  min-height: 50px;
+}
+
+.form-inline {
+  display: inline-block;
+}
+
+.el-icon-circle-close {
+  color: #fff;
+}
+
+.el-table .warning-row {
+  background: #f7faff;
+}
+
+.el-table .success-row {
+  background: #ebf1fb;
+}
+
+//2020-03-11 add  common css
+.selectItem .el-tag{
+  max-width: 90%;
+}
+.selectItem .el-tag.el-tag--info .el-tag__close{
+  top:-6px;
+  left:-9px;
+}
+.selectItem .el-select__tags-text {
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+// 2020--3-13 add picture css
+.avatar-uploader {
+  min-width: 100px;
+  min-height: 100px;
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  .el-upload {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+    border-color: #409EFF;
+  }
+  &:hover .el-icon-delete {
+    background-color: red;
+  }
+  div {
+    width: 100%;
+    height: 100%;
+
+    & img {
+      display: block;
+    }
+
+    .el-icon-delete {
+      font-size: 20px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 6px;
+      z-index: 100;
+      background-color: #db3b21;
+      color: #fff;
+      border-bottom-left-radius: 6px;
+    }
+
+    .avatar-uploader-icon {
+      font-size: 28px;
+      color: #8c939d;
+      line-height: 125px;
+      text-align: center;
+    }
+  }
+}
